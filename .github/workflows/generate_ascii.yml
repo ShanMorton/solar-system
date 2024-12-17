@@ -9,19 +9,17 @@ jobs:
             - name: Check out Repo
               uses: actions/checkout@v4
 
-            - name: Welcome mesg, List and Read files
-              run: |
-                echo "The first WF"
-                ls -al
-                cat "README.md"
-            # can run several cmd in the same step usin a pipe |
+            - name: Install CowSay program
+              run: sudo apt-get install cowsay -y
 
-            - name: Generate ASCII Artwork
-              run: cowsay 'Hello, Linux!'
+            - name: Execute CowSay program
+              run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
 
-            # commented out steps below as listed in several steps
-            # - name: List files
-            #   run:  ls
+            - name: Test file exists
+              run: grep -i "dragon" dragon.txt
+ 
+            - name: Read dragon.txt file
+              run: cat dragon.txt
 
-            # - name: Read File
-            #   run: cat README.md
+            - name: List repo files
+              run: ls -al
