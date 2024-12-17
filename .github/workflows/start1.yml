@@ -6,6 +6,9 @@ jobs:
     first_fw:
         runs-on: ubuntu-latest
         steps:
+            - name: Check out Repo
+              uses: actions/checkout@v4
+              
             - name: Welcome Message
               run: echo "The first WF"
 
