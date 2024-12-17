@@ -1,5 +1,5 @@
-name : First WF
-
+name : Generate ACSII
+# Update from video on Tuesday.
 on : push
 
 jobs:
