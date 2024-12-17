@@ -14,7 +14,6 @@ jobs:
 
             - name: Execute the shell script
               run: |
-                cd /.github/workflow 
                 chmod +x ./ascii_script.sh
                 /.ascii_script.sh
                 
