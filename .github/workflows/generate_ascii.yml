@@ -3,7 +3,7 @@ name : Generate ACSII
 on : push
 
 jobs:
-    first_fw:
+    Generate_ASCII:
         runs-on: ubuntu-latest
         steps:
             - name: Check out Repo
