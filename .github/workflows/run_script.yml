@@ -13,7 +13,7 @@ jobs:
               run: ls -al
 
             - name: Execute the shell script
-              run: \workflow\.ascii_script.sh
+              run: /workflow/.ascii_script.sh
 
                 #chmod +x ./ascii_script.sh
                 
