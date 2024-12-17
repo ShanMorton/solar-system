@@ -1,0 +1,16 @@
+name : First WF
+
+on : push
+
+jobs:
+    first_fw:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Welcome Message
+              run: echo "The first WF"
+
+            - name: List files
+              run:  ls
+
+            - name: Read File
+              run: cat README.md
