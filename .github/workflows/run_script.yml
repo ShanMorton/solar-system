@@ -1,9 +1,9 @@
 name : Run Shell Script
-# Update from video on Tuesday.
+
 on : push
 
 jobs:
-    Execute_Shell_Scripts:
+   _RunShellScript:
         runs-on: ubuntu-latest
         steps:
             - name: Check out Repo
@@ -14,6 +14,6 @@ jobs:
 
             - name: Execute the shell script
               run: |
-              chmod +x ./ascii_script.sh
-              ./ascii_script.sh
-              
+                chmod +x ./ascii_script.sh
+                ./ascii_script.sh
+
