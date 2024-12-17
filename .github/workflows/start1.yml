@@ -8,12 +8,30 @@ jobs:
         steps:
             - name: Check out Repo
               uses: actions/checkout@v4
-              
-            - name: Welcome Message
-              run: echo "The first WF"
 
-            - name: List files
-              run:  ls
+            - name: Welcome mesg, List and Read files
+              run: |
+                echo "The first WF"
+                ls -al
+                cat "README.md"
+            # can run several cmd in the same step usin a pipe |
+            - name: Generate ASCII Artwork
+              run: cowsay 'Hello, Linux!'
 
-            - name: Read File
-              run: cat README.md
+# Output:
+#  _____________
+# < Hello, Linux! >
+#  -------------
+#         \   ^__^
+#          \  (oo)\_______
+#             (__)\       )\/\
+#                 ||----w |
+#                 ||     ||
+
+
+            # commented out steps below as listed in several steps
+            # - name: List files
+            #   run:  ls
+
+            # - name: Read File
+            #   run: cat README.md
