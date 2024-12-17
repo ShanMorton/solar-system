@@ -1,0 +1,16 @@
+name : Run Shell Script
+# Update from video on Tuesday.
+on : push
+
+jobs:
+    Execute_Shell_Scripts:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out Repo
+              uses: actions/checkout@v4
+
+            - name: List files
+              run: ls -al
+
+            - name: Execute the shell script
+              run: ./ascii_script.sh
