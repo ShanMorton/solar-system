@@ -17,7 +17,7 @@ jobs:
             # can run several cmd in the same step usin a pipe |
 
             - name: Generate ASCII Artwork
-              run: cowsay 'Hello, Linux!'
+              run: echo "Run the CowSay program"
 
             # commented out steps below as listed in several steps
             # - name: List files
