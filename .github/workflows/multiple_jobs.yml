@@ -13,18 +13,17 @@ jobs:
           - name: Execute CowSay program
             run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
 
-          - name: Sleep for 10 seconds
-            run: sleep 10
+          - name: Sleep for 5 seconds
+            run: sleep 5
 
     task2:
       runs-on: ubuntu-latest
       steps:
+        - name: Sleep for 20 seconds
+          run: sleep 20
+
         - name: Test file exists
           run: grep -i "dragon" dragon.txt
-
-        - name: Sleep for 10 seconds
-          run: sleep 10
-        
 
     task3:
       runs-on: ubuntu-latest
