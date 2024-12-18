@@ -1,0 +1,34 @@
+name : multiple_jobs
+# Update from video on Tuesday.
+on : push
+
+jobs:
+    task1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Install CowSay program
+          run: sudo apt-get install cowsay -y
+
+        - name: Execute CowSay program
+          run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
+
+        - name: Slepp for 10 seconds
+          run: sleep 10
+
+    task2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Slepp for 10 seconds
+          run: sleep 10
+
+        - name: Test file exists
+          run: grep -i "dragon" dragon.txt
+
+    task3:
+      runs-on: ubunto-latest
+      steps:
+        - name: Read dragon.txt file
+          run: cat dragon.txt
+
+        - name: Deploying
+          run: echo "Deploying........"
