@@ -26,7 +26,7 @@ jobs:
           run: grep -i "dragon" dragon.txt
 
     task3:
-      runs-on: ubunto-latest
+      runs-on: ubuntu-latest
       steps:
         - name: Read dragon.txt file
           run: cat dragon.txt
