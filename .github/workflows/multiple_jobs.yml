@@ -4,22 +4,23 @@ on : push
 
 jobs:
     MultipleJobs:
+
     task1:
       runs-on: ubuntu-latest
       steps:
-        - name: Install CowSay program
-          run: sudo apt-get install cowsay -y
+      - name: Install CowSay program
+        run: sudo apt-get install cowsay -y
 
-        - name: Execute CowSay program
-          run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
+      - name: Execute CowSay program
+        run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
 
-        - name: Slepp for 10 seconds
-          run: sleep 10
+      - name: Slepp for 10 seconds
+        run: sleep 10
 
     task2:
       runs-on: ubuntu-latest
       steps:
-        - name: Slepp for 10 seconds
+        - name: Sleep for 10 seconds
           run: sleep 10
 
         - name: Test file exists
