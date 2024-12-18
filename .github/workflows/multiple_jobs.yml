@@ -23,17 +23,13 @@ jobs:
           run: sleep 10
 
         - name: Test file exists
-          run: |
-            cd ../
-            grep -i "dragon" dragon.txt
+          run: grep -i "dragon" dragon.txt
 
     task3:
       runs-on: ubunto-latest
       steps:
         - name: Read dragon.txt file
-          run: |
-            cd ../
-            cat dragon.txt
+          run: cat dragon.txt
 
         - name: Deploying
           run: echo "Deploying........"
