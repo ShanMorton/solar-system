@@ -4,7 +4,7 @@ on : push
 
 jobs:
     Multiple_Jobs:
-    task1:
+    #task1:
       runs-on: ubuntu-latest
       steps:
           - name: Install CowSay program
