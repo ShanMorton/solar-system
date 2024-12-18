@@ -1,8 +1,9 @@
-name : multiple_jobs
-# Update from video on Tuesday.
+name : Multiple Jobs
+
 on : push
 
 jobs:
+    MultipleJobs:
     task1:
       runs-on: ubuntu-latest
       steps:
@@ -22,13 +23,17 @@ jobs:
           run: sleep 10
 
         - name: Test file exists
-          run: grep -i "dragon" dragon.txt
+          run: |
+            cd ../
+            grep -i "dragon" dragon.txt
 
     task3:
       runs-on: ubunto-latest
       steps:
         - name: Read dragon.txt file
-          run: cat dragon.txt
+          run: |
+            cd ../
+            cat dragon.txt
 
         - name: Deploying
           run: echo "Deploying........"
