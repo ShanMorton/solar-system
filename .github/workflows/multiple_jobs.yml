@@ -13,8 +13,8 @@ jobs:
           - name: Execute CowSay program
             run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
 
-          - name: Slepp for 10 seconds
-            run: sleep 10
+          - name: Sleep for 20 seconds
+            run: sleep 20
 
     task2:
       runs-on: ubuntu-latest
