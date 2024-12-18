@@ -4,7 +4,7 @@ on : push
 
 jobs:
     Multiple_Jobs:
-    #task1:  #test
+    task1: 
       runs-on: ubuntu-latest
       steps:
           - name: Install CowSay program
@@ -17,6 +17,7 @@ jobs:
             run: sleep 5
 
     task2:
+      needs: task1  
       runs-on: ubuntu-latest
       steps:
         - name: Sleep for 20 seconds
