@@ -2,19 +2,19 @@ name : Multiple Jobs
 
 on : push
 
-Multiple_Jobs:
+jobs:
   task_1: 
-  runs-on: ubuntu-latest
-  steps:
-      - name: Install CowSay program
-        run: sudo apt-get install cowsay -y
+    runs-on: ubuntu-latest
+    steps:
+        - name: Install CowSay program
+          run: sudo apt-get install cowsay -y
 
-      - name: Execute CowSay program
-        run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
-      - name: Sleep for 5 seconds
-        run: sleep 5
+        - name: Execute CowSay program
+          run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
+        - name: Sleep for 5 seconds
+          run: sleep 5
 
-    task_2:
+  task_2:
     needs: task_1  
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +23,7 @@ Multiple_Jobs:
      - name: Test file exists
        run: grep -i "dragon" dragon.txt
             
-    task_3:
+  task_3:
     needs: task_2
     runs-on: ubuntu-latest
     steps:
