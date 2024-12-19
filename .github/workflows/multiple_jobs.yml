@@ -15,7 +15,7 @@ jobs:
         - name: Execute CowSay program
           run: |
             pwd
-            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> ./dragon.txt
+            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
             ls -al
             sleep 5
 
@@ -40,8 +40,8 @@ jobs:
           run: |
             pwd
             ls -al
-            grep -i "dragon" dragon.txt
-            #ls | grep -w 'dragon.txt'
+            #grep -i "dragon" dragon.txt
+            ls | grep -w 'dragon.txt'
             ls -al
             
   task_3:
@@ -56,6 +56,7 @@ jobs:
             
         - name: Read dragon.txt file
           run: |
+            pwd 
             ls -al 
             cat dragon.txt
             ls -al
