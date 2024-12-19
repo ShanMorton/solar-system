@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Install CowSay program
-          run: sudo apt-get install cowsay -y
+          run:  |
+            ls -al
+            sudo apt-get install cowsay -y
 
         - name: Execute CowSay program
           run: |
-            ls -al
-            touch dragon.txt
-            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> ./dragon.txt
+            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
             ls -al
             sleep 5
 
