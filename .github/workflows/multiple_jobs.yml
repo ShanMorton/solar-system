@@ -34,7 +34,7 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: DragonFile
-            path: 
+            path: .
             
         - name: Test file exists
           run: |
@@ -52,7 +52,7 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: DragonFile
-            path:
+            path: .
 
         - name: Read dragon.txt file
           run: |
