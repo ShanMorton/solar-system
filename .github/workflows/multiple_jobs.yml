@@ -8,11 +8,13 @@ jobs:
     steps:
         - name: Install CowSay program
           run:  |
+            pwd
             ls -al
             sudo apt-get install cowsay -y
 
         - name: Execute CowSay program
           run: |
+            pwd
             cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
             ls -al
             sleep 5
@@ -36,6 +38,7 @@ jobs:
             
         - name: Test file exists
           run: |
+            pwd
             ls -al
             ls | grep -w 'dragon.txt'
             ls -al
