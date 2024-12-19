@@ -23,7 +23,7 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: DragonFile
-            path: ./dragon.txt
+            path: dragon.txt
             if-no-files-found: error    # 'warn' or 'ignore' are also available, defaults to `warn`
 
   task_2:
@@ -40,7 +40,8 @@ jobs:
           run: |
             pwd
             ls -al
-            ls | grep -w 'dragon.txt'
+            grep -i "dragon" dragon.txt
+            #ls | grep -w 'dragon.txt'
             ls -al
             
   task_3:
