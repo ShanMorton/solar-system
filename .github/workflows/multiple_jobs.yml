@@ -31,7 +31,8 @@ jobs:
             #if-no-files-found: error    # 'warn' or 'ignore' are also available, defaults to `warn`
 
         - name: Test file exists
-          run: grep -i "dragon" dragon.txt
+          run: ls | grep -w 'dragon.txt'
+
             
   task_3:
     needs: task_2
