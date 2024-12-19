@@ -1,0 +1,31 @@
+name: Exploring Variables and Secrets
+
+on: push
+
+#Here is where you define variable at the top/workflow level available to all jobs and steps
+env: 
+    CONTAINER_REGSTRY: docker.io
+    DOCKER_USERNAME:  MyOwnDockerUserName
+    IMAGE_NAME: someDockerImageName
+
+jobs:
+    docker:
+         #env:  to use environment variable at the JOB Level avaiable to all steps in the job where defined.
+         #IMAGE_NAME: someDockerImageName 
+        runs-on: unbuntu-latest
+        steps:
+            #env:  to use environment variable at the STEP Level avaiable only to the step where defined.
+            #IMAGE_NAME: someDockerImageName 
+            - name: Docker Build
+              run: docker build -t docker.io/dockerUsername/imageName:latest
+            - name: Docker Login
+              run: docker login --username=dockerUsername --password=s3curePa$$word
+            - name: Docker Publish
+              run: docker push docker.io/dockerUsername/imageName:latest
+
+    deploy:
+        needs: docker
+        runs-on: ubuntu-latest
+        steps:
+            - name: Docker Run
+              run: docker run -d -p 8080:80 docker.io/dockerUsername/imageName:latest
