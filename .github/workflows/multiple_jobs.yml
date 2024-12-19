@@ -23,7 +23,7 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: DragonFile
-            path: dragon.txt
+            path: 
             if-no-files-found: error    # 'warn' or 'ignore' are also available, defaults to `warn`
 
   task_2:
@@ -34,7 +34,7 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: DragonFile
-            path: dragon.txt
+            path: 
             
         - name: Test file exists
           run: |
@@ -52,8 +52,8 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: DragonFile
-            path: dragon.txt
-            
+            path:
+
         - name: Read dragon.txt file
           run: |
             pwd 
