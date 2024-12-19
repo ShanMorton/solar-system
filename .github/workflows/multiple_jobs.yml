@@ -12,7 +12,8 @@ jobs:
         - name: Execute CowSay program
           run: |
             ls -al
-            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
+            touch dragon.txt
+            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> ./dragon.txt
             ls -al
             sleep 5
 
