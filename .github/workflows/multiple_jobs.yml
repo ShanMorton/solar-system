@@ -11,6 +11,7 @@ jobs:
 
         - name: Execute CowSay program
           run: |
+            cd /.github/workflow
             ls -al
             cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
             ls -al
@@ -20,7 +21,7 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: DragonFile
-            path: dragon.txt
+            path: ./dragon.txt
             if-no-files-found: error    # 'warn' or 'ignore' are also available, defaults to `warn`
 
   task_2:
