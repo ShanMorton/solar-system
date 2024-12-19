@@ -11,7 +11,6 @@ jobs:
 
         - name: Execute CowSay program
           run: |
-            cd /.github/workflow
             ls -al
             cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
             ls -al
