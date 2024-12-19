@@ -10,8 +10,12 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Execute CowSay program
-          run: cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
-       
+          run: |
+            ls -al
+            cowsay -f dragon "Run for your live! I am a Dragon! Roar!!!" >> dragon.txt
+            ls -al
+            sleep 5
+
         - name: dragon-file-upload
           uses: actions/upload-artifact@v4
           with:
@@ -28,11 +32,12 @@ jobs:
           with:
             name: DragonFile
             path: dragon.txt
-            #if-no-files-found: error    # 'warn' or 'ignore' are also available, defaults to `warn`
-
+            
         - name: Test file exists
-          run: ls | grep -w 'dragon.txt'
-
+          run: |
+            ls -al
+            ls | grep -w 'dragon.txt'
+            ls -al
             
   task_3:
     needs: task_2
@@ -43,9 +48,11 @@ jobs:
           with:
             name: DragonFile
             path: dragon.txt
-            #if-no-files-found: error    # 'warn' or 'ignore' are also available, defaults to `warn`
-
+            
         - name: Read dragon.txt file
-          run: cat dragon.txt
+          run: |
+            ls -al 
+            cat dragon.txt
+            ls -al
         - name: Deploying
           run: echo "Deploying........"
