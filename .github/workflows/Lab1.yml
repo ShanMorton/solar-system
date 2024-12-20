@@ -5,7 +5,7 @@ on:
         - cron: '*/5 * * * *'   # <=== Change this value
 
 jobs:
-  HellowJob: 
+  HelloJob: 
     runs-on: ubuntu-latest
     steps:
         - name: Echo Text
