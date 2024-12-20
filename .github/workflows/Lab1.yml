@@ -1,0 +1,10 @@
+name : Hello_world_repo
+
+on : push
+
+jobs:
+  HellowJob: 
+    runs-on: ubuntu-latest
+    steps:
+        - name: Echo Text
+          run: echo "Hello, Shandra"
