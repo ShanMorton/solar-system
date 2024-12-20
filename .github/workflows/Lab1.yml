@@ -4,8 +4,18 @@ on: workflow_dispatch
     
 
 jobs:
-  HelloJob: 
+  HelloJob1: 
     runs-on: ubuntu-latest
     steps:
         - name: Echo Text
-          run: echo "Hello, Shandra"
+          run: |
+            sleep 20
+            echo "1Hello, Shandra"
+  
+  HelloJob2: 
+    runs-on: ubuntu-latest
+    steps:
+        - name: Echo Text
+          run: |
+            sleep 10
+            echo "2Hello, Shandra"
