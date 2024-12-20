@@ -1,6 +1,8 @@
 name : Hello_world_repo
 
-on : push
+on:
+    schedule:
+        - cron: '*/5 * * * *'   # <=== Change this value
 
 jobs:
   HellowJob: 
