@@ -3,8 +3,10 @@ name : concurrency
 on: workflow_dispatch #a manual workflow trigger
 
 jobs:
+  
   HelloJob1: 
     runs-on: ubuntu-latest
+    timeout-minutes: 1  # in minutes. this job should be finished in 1 min or it cancels
     steps:
         - name: Echo Text
           run: echo "1Hello, Shandra"
@@ -15,8 +17,9 @@ jobs:
       group: HelloJob2-group
       cancel-in-progress: true  #false will allow the current job to continue before the othe will run.
     runs-on: ubuntu-latest
+    timeout-minutes: 1  # in minutes. this job should be finished in 1 min or it cancels
     steps:
         - name: Echo Text
           run: |
-            sleep 120
+            sleep 61
             echo "2Hello, Shandra"
