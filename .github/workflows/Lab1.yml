@@ -1,21 +1,22 @@
-name : Lab1
+name : concurrency
 
-on: workflow_dispatch
-    
+on: workflow_dispatch #a manual workflow trigger
 
 jobs:
   HelloJob1: 
     runs-on: ubuntu-latest
     steps:
         - name: Echo Text
-          run: |
-            sleep 20
-            echo "1Hello, Shandra"
+          run: echo "1Hello, Shandra"
   
   HelloJob2: 
+    #concurrency:  allows one job to run at a time.defaults:
+    concurrency:
+      group: HelloJob2-group
+      cancel-in-progress: false  #true will cancel any in-progress jobs
     runs-on: ubuntu-latest
     steps:
         - name: Echo Text
           run: |
-            sleep 10
+            sleep 120
             echo "2Hello, Shandra"
