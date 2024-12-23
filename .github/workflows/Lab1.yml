@@ -13,7 +13,7 @@ jobs:
     #concurrency:  allows one job to run at a time.defaults:
     concurrency:
       group: HelloJob2-group
-      cancel-in-progress: false  #true will cancel any in-progress jobs
+      cancel-in-progress: true  #false will allow the current job to continue before the othe will run.
     runs-on: ubuntu-latest
     steps:
         - name: Echo Text
