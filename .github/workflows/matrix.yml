@@ -5,6 +5,8 @@ on: push
 
 jobs:
     deploy:
+      #if the branch is the main branch.
+      if: github.ref == 'refs/heads/main'  
       strategy: 
        fail-fast: false #will allow the other jobs to continue to run instead of canceling them. True, default
        max-parallel: 2  #will only run max two jobs at a time.

@@ -12,6 +12,9 @@ jobs:
           run: echo "1Hello, Shandra"
   
   HelloJob2: 
+    #if the branch is the main branch, then run the job.
+    # can name a different branch as needed. 
+    if: github.ref == 'refs/heads/main'  
     #concurrency:  allows one job to run at a time.defaults:
     concurrency:
       group: HelloJob2-group
