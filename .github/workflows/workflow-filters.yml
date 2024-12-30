@@ -1,0 +1,26 @@
+name: WorkFlow Filters
+
+on:
+    workflow_dispatch:
+    #schedule:
+    push: # can user fileters: 
+        branches-ignore:
+        - feature/*  # ignore branches that start with feature or test
+        - test/**
+        branches: 
+        - main  # will push to main
+        - "!feature/*"  #ignore pushes to branches with names that start with "feature"
+    pull_request:
+        types:
+            - opened
+            - closed
+        paths-ignore: # workflow will run when there is a change to any other files other than README.md
+            - README.md
+        branches:  
+            - main # workflow will run on a pull request that targets the listed branch(es). 
+
+jobs:
+    hello:
+      runs-on: ubutnut-latest
+      steps:
+        - run: echo "This workflow is executed for event type - ${{ github.event_name }}"
