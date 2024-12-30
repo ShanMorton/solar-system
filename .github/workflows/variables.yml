@@ -2,6 +2,7 @@ name: Exploring Variables and Secrets
 
 on: push
 
+# adding a comment to test out Workflow Event Filters and Activity Types @ 14 min mark
 #Here is where you define variable at the top/workflow level available to all jobs and steps
 env: 
     CONTAINER_REGSTRY: docker.io
