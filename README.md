@@ -49,3 +49,5 @@ If the installation was successful, you should be able to run the following comm
 
 https://github.com/actions/checkout
 
+Added new Branch action/update and
+updated this README.md file
