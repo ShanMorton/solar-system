@@ -4,9 +4,9 @@ on:
     # workflow_dispatch:  #for manaual workflow executions
     #schedule:
     push: # can user fileters: 
-        # branches-ignore:
-        # - feature/*  # ignore branches that start with feature or test
-        # - test/**
+        branches-ignore:
+        - feature/*  # ignore branches that start with feature or test
+        - test/**
         branches: 
         - main  # will push to main
         - "!feature/*"  #ignore pushes to branches with names that start with "feature"
