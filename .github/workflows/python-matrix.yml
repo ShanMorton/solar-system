@@ -7,7 +7,7 @@ jobs:
       strategy: 
        matrix:
         os: [ubuntu-latest, ubuntu-20.04, windows-latest]
-        images: [python:3.10-slim, Python 3.11, python:3.12-slim]
+        images: [python:3.10, Python:3.11, python:3.12]
         # # exclude: don't run the image on that os
         # exclude: 
         #   - images: alpine
