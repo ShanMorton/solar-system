@@ -1,7 +1,7 @@
 name: WorkFlow_Filters
 
 on:
-    workflow_dispatch:
+    # workflow_dispatch:  #for manaual workflow executions
     #schedule:
     push: # can user fileters: 
         # branches-ignore:
