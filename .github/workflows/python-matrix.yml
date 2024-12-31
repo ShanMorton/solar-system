@@ -7,12 +7,11 @@ jobs:
       strategy: 
        matrix:
          os: [ubuntu-latest, ubuntu-20.04, windows-latest]
-         images: ["python:latest", "python:3.10", "python:3.11" ]
-        #images: [python:3.10, python:3.11, python:3.12]
-        # # exclude: don't run the image on that os
-        # exclude: 
-        #   - images: alpine
-        #     os: windows-latest
+         images: ["python:3.10", "python:3.11","python:latest" ]
+        # #exclude: don't run the image on that os
+         exclude: 
+         - images: "python:3.11"
+           os: windows-latest
         # # include:  do run that image on that os.    
         # include: 
         #   - images: amd64/alpine
