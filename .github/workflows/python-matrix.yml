@@ -14,8 +14,8 @@ jobs:
            os: windows-latest
         # # include:  do run that image on that os.    
          include: 
-           - images: winamd64/python
-             os: winamd65
+         - images: winamd64/python
+           os: winamd64
       runs-on: ${{ matrix.os }}
       steps:
       - name: Echo Python Images
