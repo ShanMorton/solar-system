@@ -13,9 +13,9 @@ jobs:
          - images: "python:3.11"
            os: windows-latest
         # # include:  do run that image on that os.    
-        # include: 
-        #   - images: amd64/alpine
-        #     os: ubuntu-20.04
+         include: 
+           - images: winamd64/python
+             os: winamd65
       runs-on: ${{ matrix.os }}
       steps:
       - name: Echo Python Images
