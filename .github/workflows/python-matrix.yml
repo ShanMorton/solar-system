@@ -19,8 +19,8 @@ jobs:
         #     os: ubuntu-20.04
       runs-on: ${{ matrix.os }}
       steps:
-      - name: Echo Docker Details
+      - name: Echo Python Images
         run: docker info
                         
-      - name: Run image on ${{ matrix.os }}
+      - name: Install Python on ${{ matrix.os }}
         run: docker run ${{matrix.images}}
